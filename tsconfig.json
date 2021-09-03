@@ -1,0 +1,9 @@
+{
+  "include": ["api/**/*.ts"],
+  "compilerOptions": {
+    "baseUrl": "api",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true
+  }
+}

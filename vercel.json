@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/chart/:icao", "destination": "api/routes/chart/icao" },
+    { "source": "/(.*)", "destination": "api/routes/404" }
+  ]
+}

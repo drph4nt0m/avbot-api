@@ -1,0 +1,37 @@
+{
+  "name": "avbot-api",
+  "version": "1.0.0",
+  "description": "AvBot API",
+  "author": "Rahul Singh <hey.singh@protonmail.com>",
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "start": "vercel dev",
+    "deploy": "vercel deploy --prod",
+    "lint": "eslint ./api/**/*.ts --max-warnings 0",
+    "lint-fix": "eslint ./api/**/*.ts --fix",
+    "prettier:ci": "prettier .",
+    "prettier": "prettier . -w"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "micro-cors": "^0.1.1",
+    "mongodb": "^4.1.1",
+    "prettier": "^2.3.2",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/mongodb": "^4.0.7",
+    "@types/node": "^16.7.10",
+    "@types/winston": "2.4.4",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-airbnb-typescript": "^14.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4"
+  }
+}

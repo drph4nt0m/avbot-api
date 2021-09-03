@@ -1,0 +1,109 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters.",
+    "version": "1.0.0",
+    "title": "AvBot API",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "apiteam@swagger.io"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "api.avbot.in",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "chart",
+      "description": "Aerodromes charts"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/chart/{icao}": {
+      "get": {
+        "tags": [
+          "chart"
+        ],
+        "summary": "Get aerodrome chart by ICAO code",
+        "description": "Returns a aerodrome chart link",
+        "operationId": "getChartByICAO",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "icao",
+            "in": "path",
+            "description": "ICAO code of the aerodrome",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Chart"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Pet not found"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "Chart": {
+      "type": "object",
+      "properties": {
+        "icao": {
+          "description": "ICAO Code",
+          "type": "string",
+          "example": "VABB"
+        },
+        "country": {
+          "description": "Country of the airport",
+          "type": "string",
+          "example": "IN"
+        },
+        "link": {
+          "description": "Chart link",
+          "type": "string",
+          "example": "https://aim-india.aai.aero/eaip-v2-02-2021/eAIP/IN-AD%202.1VABB-en-GB.html"
+        },
+        "source": {
+          "description": "Source of Chart",
+          "type": "string",
+          "example": "Airports Authority of India"
+        },
+        "updatedAt": {
+          "description": "Chart last updated time",
+          "type": "string",
+          "example": "2021-09-02T09:14:21.115Z"
+        }
+      }
+    }
+  }
+}
