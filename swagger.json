@@ -1,16 +1,15 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters.",
+    "description": "",
     "version": "1.0.0",
     "title": "AvBot API",
-    "termsOfService": "http://swagger.io/terms/",
     "contact": {
-      "email": "apiteam@swagger.io"
+      "email": "hey.singh@protonmail.com"
     },
     "license": {
-      "name": "Apache 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      "name": "GPL-3.0-only",
+      "url": "https://github.com/drph4nt0m/avbot-api/blob/master/LICENSE"
     }
   },
   "host": "api.avbot.in",
@@ -56,7 +55,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Chart not found"
           }
         },
         "security": [
