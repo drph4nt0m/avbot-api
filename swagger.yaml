@@ -1,0 +1,73 @@
+swagger: '2.0'
+info:
+  description: ''
+  version: 1.0.0
+  title: AvBot API
+  contact:
+    email: hey.singh@protonmail.com
+  license:
+    name: GPL-3.0-only
+    url: https://github.com/drph4nt0m/avbot-api/blob/master/LICENSE
+host: api.avbot.in
+basePath: /
+tags:
+  - name: chart
+    description: Aerodromes charts
+schemes:
+  - https
+paths:
+  /chart/{icao}:
+    get:
+      tags:
+        - chart
+      summary: Get aerodrome chart by ICAO code
+      description: Returns a aerodrome chart link
+      operationId: getChartByICAO
+      produces:
+        - application/json
+      parameters:
+        - name: icao
+          in: path
+          description: ICAO code of the aerodrome
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Chart Response
+          schema:
+            $ref: '#/definitions/Chart'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Chart not found
+      security:
+        - api_key: []
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: Authorization
+    in: header
+definitions:
+  Chart:
+    type: object
+    properties:
+      icao:
+        description: ICAO Code
+        type: string
+        example: VABB
+      country:
+        description: Country of the airport
+        type: string
+        example: IN
+      link:
+        description: Chart link
+        type: string
+        example: https://aim-india.aai.aero/eaip-v2-02-2021/eAIP/IN-AD%202.1VABB-en-GB.html
+      source:
+        description: Source of Chart
+        type: string
+        example: Airports Authority of India
+      updatedAt:
+        description: Chart last updated time
+        type: string
+        example: '2021-09-02T09:14:21.115Z'
